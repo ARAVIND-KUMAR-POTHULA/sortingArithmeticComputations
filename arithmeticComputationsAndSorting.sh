@@ -15,7 +15,7 @@ array[3]=$(( arithmeticOperation[ "a%b+c" ] ))
 	do
 		for (( check=$count+1;check<4;check++ ))
 		do
-			if (( $((array[$count])) < $((array[$check])) ))
+			if (( $((array[$count])) > $((array[$check])) ))
 			then
 				temp=$((array[$count]))
 				array[$count]=$(( array[$check] ))
