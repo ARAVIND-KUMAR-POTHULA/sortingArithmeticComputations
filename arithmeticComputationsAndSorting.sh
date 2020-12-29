@@ -11,6 +11,16 @@ array[0]=$(( arithmeticOperation[ "a+b*c" ] ))
 array[1]=$(( arithmeticOperation[ "a*b+c" ] ))
 array[2]=$(( arithmeticOperation[ "c+a/b" ] ))
 array[3]=$(( arithmeticOperation[ "a%b+c" ] ))
-echo ${!arithmeticOperation[@]}
-echo ${arithmeticOperation[@]}
+	for ((count=0;count<3;count++ ))
+	do
+		for (( check=$count+1;check<4;check++ ))
+		do
+			if (( $((array[$count])) < $((array[$check])) ))
+			then
+				temp=$((array[$count]))
+				array[$count]=$(( array[$check] ))
+				array[$check]=$temp
+			fi
+		done
+	done
 echo ${array[@]}
