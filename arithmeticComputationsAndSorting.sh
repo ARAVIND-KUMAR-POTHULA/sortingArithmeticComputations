@@ -1,2 +1,4 @@
 #! /bin/bash -x
-echo "welcome to arithmetic and sorting computations"
+read -p "enter a value in a " a
+read -p "enter a value in b " b
+read -p "enter a value in c " c
